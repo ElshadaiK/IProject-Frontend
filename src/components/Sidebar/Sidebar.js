@@ -77,7 +77,7 @@ export default function Sidebar() {
               <Menu />
             </div>
 
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap mt-4">
               <div className="w-full px-4">
                 <span className="cursor-pointer text-sm block my-4 p-4 text-white text-center ">
                 <i class="fas fa-sign-out-alt mr-3"></i><div className="inline-block"> Logout</div></span>
