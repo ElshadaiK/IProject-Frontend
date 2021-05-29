@@ -522,7 +522,6 @@ iframe,
 embed,
 object {
   display: block;
-  vertical-align: middle;
 }
 
 /**
@@ -1533,6 +1532,11 @@ select {
           flex: 1 1 0%;
 }
 
+.flex-5 {
+  -webkit-flex: 0.3 1 0%;
+          flex: 0.3 1 0%;
+}
+
 .flex-auto {
   -webkit-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -1718,7 +1722,9 @@ select {
   margin-left: 4rem;
 }
 
-
+.ml-10{
+  margin-left: 3rem;
+}
 
 .-m-24 {
   margin: -6rem;

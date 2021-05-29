@@ -21,7 +21,7 @@ export default function MenuOverall({
               </div>
               <div className='flex-row pt-12'>
                 <span className="text-xs text-white">
-                  ZMK <span className="text-xl text-white font-bold">
+                  ETB <span className="text-xl text-white font-bold">
                     {menuDescription}
                   </span>
                 </span>

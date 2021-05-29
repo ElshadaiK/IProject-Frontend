@@ -8,24 +8,29 @@ export default function CardRepaymentHistory() {
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center border-b">
-            <div className="relative w-1/2 px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-12 px-4 max-w-full flex-5">
               <h3 className="font-semibold text-base text-blueGray-700">
                 Date
               </h3>
             </div>
             <div className="relative w-1/2 px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Loan Type
+                Teacher Review
               </h3>
             </div>
             <div className="relative w-1/2 px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Amount Paid
+                Company Review
               </h3>
             </div>
-            <div className="relative w-1/2 px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-1/2 px-4 max-w-full flex-5">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Payment Method
+                Company
+              </h3>
+            </div>
+            <div className="relative w-1/2 px-4 max-w-full flex-5">
+              <h3 className="font-semibold text-base text-blueGray-700">
+                Amount
               </h3>
             </div>
           </div>
@@ -39,39 +44,49 @@ export default function CardRepaymentHistory() {
                 <th className="border-t-0 px-6 text-dark-green align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                   08, MAR
                 </th>
-                <td className="border-t-0 w-30p px-8 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
-                  <div className="text-center">
-                    Student Loan
+                <td  colSpan='2' className="border-t-0 w-30p px-4 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Teacher said "this"
+                  </div>
+                </td>
+                <td  colSpan='2'  className="border-t-0 w-30p px-8 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Company said "this"
                   </div>
                 </td>
                 <td className="border-t-0 w-30p px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap">
                   <div className="text-center">
-                    ZMK 2100
+                    Knovuslab
                   </div>
                 </td>
-                <td className="border-t-0 w-30p px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap">
+                <td className="border-t-0 w-30p px-6 align-left border-l-0 border-r-0 text-xs whitespace-nowrap">
                   <div className="text-center uppercase">
-                    mobile payment
+                  ETB 2100
                   </div>
                 </td>
               </tr>
               <tr>
                 <th className="border-t-0 px-6 text-dark-green align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  09, MAR
+                  08, MAR
                 </th>
-                <td className="border-t-0 w-30p px-8 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
-                  <div className="text-center">
-                    Student Loan
+                <td  className="border-t-0 w-30p px-4 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Teacher said "this"
+                  </div>
+                </td>
+                <td  colSpan='2'  className="border-t-0 w-30p px-8 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Company said "this"
                   </div>
                 </td>
                 <td className="border-t-0 w-30p px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap">
                   <div className="text-center">
-                    ZMK 2100
+                    Knovuslab
                   </div>
                 </td>
-                <td className="border-t-0 w-30p px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap">
+                <td className="border-t-0 w-30p px-6 align-left border-l-0 border-r-0 text-xs whitespace-nowrap">
                   <div className="text-center uppercase">
-                    mobile payment
+                  ETB 2100
                   </div>
                 </td>
               </tr>

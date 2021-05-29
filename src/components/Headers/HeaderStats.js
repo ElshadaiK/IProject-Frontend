@@ -14,7 +14,7 @@ export default function HeaderStats() {
             <div className='flex flex-wrap'>
               <div className="w-8/12 px-4">
                 <div className='border-yellow w-f mb-8'>
-                  <h4 className="mb-4 uppercase font-bold text-lg">Loan & Scholarships</h4>
+                  <h4 className="mb-4 uppercase font-bold text-lg">Projects & Assignemnts</h4>
                 </div>
               </div>
               <div className="w-4/12 px-4">
@@ -32,9 +32,9 @@ export default function HeaderStats() {
               <div className="flex flex-wrap">
                 <div className="w-4/12 px-4">
                   <MenuItem
-                    menuTag="REG"
-                    menuTitle="STUDENT LOAN"
-                    menuDescription="INSTANT LOAN"
+                    menuTag="CHECK"
+                    menuTitle="STUDENT PROGRESS"
+                    menuDescription="INSTANT PROJECT"
                     menuBackgroundColor='bg-blue-100 bg-loan'
                     menuLink='forms'
                     menuIconName='loan.png'
@@ -42,9 +42,9 @@ export default function HeaderStats() {
                 </div>
                 <div className="w-4/12 px-4">
                   <MenuItem
-                    menuTag="YES"
-                    menuTitle="STUDENT SCHOLARSHIP"
-                    menuDescription="CHINA SCHOLARSHIP"
+                    menuTag="MATCH"
+                    menuTitle="PROJECT COLLECTIONS"
+                    menuDescription="BROWSE"
                     menuBackgroundColor='bg-pink-500 bg-sch'
                     menuLink='#'
                     menuIconName='scholarship.png'
@@ -52,7 +52,7 @@ export default function HeaderStats() {
                 </div>
                 <div className="w-8/12 px-4 flex-1">
                   <MenuOverall
-                    menuTitle="Total Loan Balance"
+                    menuTitle="Total Earned"
                     menuDescription="85,603.00 "
                     menuBackgroundColor='bg-blueGray-700'
                     menuIconName='chart.png'

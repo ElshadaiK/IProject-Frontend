@@ -10,16 +10,16 @@ export default function CardStudentLoan() {
           <div className="flex flex-wrap items-center border-b">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Student Loan
+              Company Name
               </h3>
             </div>
             <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-              <button
-                className="text-green active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              <a
+                className="text-green text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
               >
                 Active
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -30,17 +30,28 @@ export default function CardStudentLoan() {
             <tbody>
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  ZMK 10,000.00
+                Project Title
                 </th>
                 <td className="border-t-0 px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <div className="text-right">
-                    Due date 5th June, 2020
+                  Technologies used
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                
+                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                  Teacher's name
+                </th>
+                <td className="border-t-0 px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <div className="text-right text-xs">
+                  Due date 5th June, 2020
                   </div>
                 </td>
               </tr>
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  <a>Payment tag in 8 days</a>
+                  <a>ETB 10,000.00</a>
                 </th>
                 <td className="border-t-0 px-6 text-right border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                 <button
@@ -49,7 +60,7 @@ export default function CardStudentLoan() {
                 >
                 <a className="text-blueGray-200">
                   
-                Payoff
+                Finish
                 </a>
                 </button>
                 </td>

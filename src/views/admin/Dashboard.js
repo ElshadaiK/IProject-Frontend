@@ -16,7 +16,7 @@ export default function Dashboard() {
       <div className='flex flex-wrap'>
               <div className="w-8/12 px-4">
                 <div className='w-f mb-8'>
-                  <h4 className="mb-4 uppercase font-bold text-lg">Outstanding Loan</h4>
+                  <h4 className="mb-4 uppercase font-bold text-lg">Ongoing Projects</h4>
                 </div>
               </div>
               <div className="w-4/12 px-4 lg:ml-24">
@@ -42,7 +42,7 @@ export default function Dashboard() {
       <div className='flex flex-wrap'>
               <div className="w-8/12 px-4">
                 <div className=' w-f mb-8'>
-                  <h4 className="mb-4 uppercase font-bold text-lg">Repayment History</h4>
+                  <h4 className="mb-4 uppercase font-bold text-lg">Payment History</h4>
                 </div>
               </div>
               <div className="w-4/12 px-4 lg:ml-24">

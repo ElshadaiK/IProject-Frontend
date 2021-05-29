@@ -12,7 +12,7 @@ export default function Navbar() {
                   className="text-blue-700 text-sm sm:hidden inline-block font-semibold m-4"
                   to="/admin/dashboard"
                 >
-                  Student Scholarship
+                  Student Homepage
                 </Link>
           
           <a

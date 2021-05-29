@@ -53,7 +53,7 @@ export default function MenuItem({
           <p className="text-sm text-white mt-4">
             <div className='flex-row justify-end ml-auto mt-1 w-f'>
               <h5 className="text-white uppercase text-xs inline-flex mr-1">
-                Apply
+                SEE MORE
                               </h5>
               
               <Link

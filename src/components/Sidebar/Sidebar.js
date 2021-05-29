@@ -23,14 +23,10 @@ export default function Sidebar() {
           {/* Brand */}
 
           <Link
-            className="bigsc md:block lg:self-center md:self-center md:pb-2 text-white mr-0 inline-block mt-2 px-0"
+            className="bigsc md:block text-4xl lg:self-center md:self-center md:pb-2 text-white mr-0 inline-block mt-2 px-0"
             to="/"
           >
-            <img
-              alt="..."
-              src={require("assets/img/title.png").default}
-              className="shadow-xl  h-auto align-middle border-none max-w-120-px ml-4"
-            />
+           IProject
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
