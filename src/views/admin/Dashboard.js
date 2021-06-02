@@ -5,12 +5,16 @@ import React from "react";
 import CardRepaymentHistory from "components/Cards/CardRepaymentHistory.js";
 import CardStudentLoan from "components/Cards/CardStudentLoan.js";
 import HeaderStats from "components/Headers/HeaderStats.js";
+import AdminNavbar from "components/Navbars/AdminNavbar.js";
 
 export default function Dashboard() {
   return (
     <>
 
+      
+      <AdminNavbar />
       {/* Header */}
+      <div pt-5>Dashboard</div>
       <HeaderStats />
       <div className="relative px-4 md:px-10 mx-auto w-full">
       <div className='flex flex-wrap'>

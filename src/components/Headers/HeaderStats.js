@@ -35,7 +35,7 @@ export default function HeaderStats() {
                     menuTag="CHECK"
                     menuTitle="STUDENT PROGRESS"
                     menuDescription="INSTANT PROJECT"
-                    menuBackgroundColor='bg-blue-100 bg-loan'
+                    menuBackgroundColor='bg-lightBlue-700'
                     menuLink='forms'
                     menuIconName='loan.png'
                   />
@@ -45,8 +45,8 @@ export default function HeaderStats() {
                     menuTag="MATCH"
                     menuTitle="PROJECT COLLECTIONS"
                     menuDescription="BROWSE"
-                    menuBackgroundColor='bg-pink-500 bg-sch'
-                    menuLink='#'
+                    menuBackgroundColor='bg-pink-500 bg-loan'
+                    menuLink='projects'
                     menuIconName='scholarship.png'
                   />
                 </div>
@@ -54,7 +54,7 @@ export default function HeaderStats() {
                   <MenuOverall
                     menuTitle="Total Earned"
                     menuDescription="85,603.00 "
-                    menuBackgroundColor='bg-blueGray-700'
+                    menuBackgroundColor='bg-lightBlue-9S00'
                     menuIconName='chart.png'
                   />
                 </div>

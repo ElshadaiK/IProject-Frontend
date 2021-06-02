@@ -16,7 +16,8 @@ export default function Menu() {
                             src={require("assets/img/profile.png").default}
                             className="inline-block max-w-25-px"
                         />
-                    <div  className='mt-1'>User Profile</div></span>
+                    <div  className='mt-1'><Link >User Profile</Link></div></span>
+                    
 
                 </div>
                 <div className="w-1/2 py-2 px-3 flex-1">

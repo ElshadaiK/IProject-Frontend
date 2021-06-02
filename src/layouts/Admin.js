@@ -19,12 +19,11 @@ export default function Admin() {
     <>
       <Sidebar />
       <div className="relative md:ml-64 bg-blueGray-100">
-        <AdminNavbar />
-        {/* Header */}
-        <div pt-5>Dashboard</div>
+        
         <div className="px-4 mx-auto w-full m-24">
           <Switch>
             <Route path="/admin/dashboard" exact component={Dashboard} />
+            <Route path="/admin/projects" exact component={Tables} />
             <Route path="/admin/maps" exact component={Maps} />
             <Route path="/admin/settings" exact component={Settings} />
             <Route path="/admin/tables" exact component={Tables} />
@@ -36,3 +35,4 @@ export default function Admin() {
     </>
   );
 }
+

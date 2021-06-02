@@ -10,7 +10,7 @@ export default function MenuOverall({
 }) {
   return (
     <div className="h-full">
-      <div className="relative flex flex-col min-w-0 break-words bg-blue-300 rounded-b mb-6 xl:mb-0 shadow-lg h-full">
+      <div className={"relative flex flex-col min-w-0 break-words rounded-b bg-lightBlue-900 mb-6 xl:mb-0 shadow-lg h-full" + menuBackgroundColor}>
         <div className="flex-auto p-4">
           <div className="flex flex-wrap">
             <div className="relative w-1/2 pr-4 pt-1 max-w-full flex-grow flex-1">
