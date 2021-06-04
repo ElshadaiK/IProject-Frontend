@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
     
 class CardStudentLoan extends Component {
-  componentDidMount() {
-    fetch('https://iproject-api.herokuapp.com/institutions')
-    .then(res => res.json())
-    .then((data) => {
-      // this.setState({ contacts: data })
-      console.log(data)
-    })
-    .catch(console.log)
-  }
+  
   render() {
     return (
       <>
