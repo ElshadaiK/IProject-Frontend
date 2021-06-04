@@ -16,7 +16,7 @@ export default function Menu() {
                             src={require("assets/img/profile.png").default}
                             className="inline-block max-w-25-px"
                         />
-                    <div  className='mt-1'><Link >User Profile</Link></div></span>
+                    <div  className='mt-1'><Link to="/admin/settings" >User Profile</Link></div></span>
                     
 
                 </div>

@@ -24,9 +24,9 @@ export default function Sidebar() {
 
           <Link
             className="bigsc md:block text-4xl lg:self-center md:self-center md:pb-2 text-white mr-0 inline-block mt-2 px-0"
-            to="/"
+            to="/admin"
           >
-           IProject
+           <img src={require('assets/img/logo.png').default}/>
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
@@ -80,7 +80,8 @@ export default function Sidebar() {
             <div className="flex flex-wrap mt-4">
               <div className="w-full px-4">
                 <span className="cursor-pointer text-sm block my-4 p-4 text-white text-center ">
-                <i class="fas fa-sign-out-alt mr-3"></i><div className="inline-block"> Logout</div></span>
+                <i class="fas fa-sign-out-alt mr-3"></i><div className="inline-block">
+                  <Link to="/auth/login">Logout</Link></div></span>
               </div>
             </div>
           </div>
