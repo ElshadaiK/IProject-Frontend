@@ -20,7 +20,7 @@ export default function Admin() {
       <Sidebar />
       <div className="relative md:ml-64 bg-blueGray-100">
         
-        <div className="px-4 mx-auto w-full m-24">
+        <div className="mx-auto w-full m-24">
           <Switch>
             <Route path="/admin/dashboard" exact component={Dashboard} />
             <Route path="/admin/projects" exact component={Tables} />

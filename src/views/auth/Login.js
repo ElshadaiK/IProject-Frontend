@@ -3,10 +3,22 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import qs from "qs";   
 
+async function getUser(formData){
+  try{let res = await axios.post(`https://iproject-api.herokuapp.com/auth/login`, formData)
+  let result = await axios.get(`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`)
+  return result   }
+  catch(err){
+    console.log(err)
+  }
+
+}
 export default class Login extends Component {
   state = {
     email: '',
     password: '',
+    user: '',
+    user_id: '',
+    user_role: ''
   }
 
   handleChangeEmail = event => {
@@ -25,11 +37,18 @@ export default class Login extends Component {
       console.log(pair[0]+ ', ' + pair[1]); 
   }
 
-    axios.post(`https://iproject-api.herokuapp.com/auth/login`, formData)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+  // let result = getUser(formData);
+  // console.log(result)
+  fetch("https://iproject-api.herokuapp.com/students/", {
+    method: 'get'
+  }).then(res => res.json())
+    .then(
+    (result) => {
+        console.log(result);
+    }).catch(err => {
+        console.log(err);
+    })
+
   }
   render() {
     return (
