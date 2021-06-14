@@ -4,9 +4,15 @@ import axios from 'axios'
 import qs from "qs";   
 
 async function getUser(formData){
-  try{let res = await axios.post(`https://iproject-api.herokuapp.com/auth/login`, formData)
-  let result = await axios.get(`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`)
-  return result   }
+  try{
+    let res = await axios.post(`https://iproject-api.herokuapp.com/auth/login`, formData)
+    res = await axios.get(`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`,
+    {
+      headers: {"Access-Control-Allow-Origin": "*"}
+    }
+    )
+  console.log(res)
+  return res   }
   catch(err){
     console.log(err)
   }
@@ -37,17 +43,17 @@ export default class Login extends Component {
       console.log(pair[0]+ ', ' + pair[1]); 
   }
 
-  // let result = getUser(formData);
+  getUser(formData).then(res => {console.log(res)})
   // console.log(result)
-  fetch("https://iproject-api.herokuapp.com/students/", {
-    method: 'get'
-  }).then(res => res.json())
-    .then(
-    (result) => {
-        console.log(result);
-    }).catch(err => {
-        console.log(err);
-    })
+  // fetch("https://iproject-api.herokuapp.com/students/", {
+  //   method: 'get'
+  // }).then(res => res.json())
+  //   .then(
+  //   (result) => {
+  //       console.log(result);
+  //   }).catch(err => {
+  //       console.log(err);
+  //   })
 
   }
   render() {
