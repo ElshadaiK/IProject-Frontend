@@ -1,26 +1,45 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import { Cookies } from 'react-cookie';
 import axios from 'axios'
 
 async function getUser(formData){
   try{
+    let role, token, address;
     let res = await axios.post(`https://iproject-api.herokuapp.com/auth/login`, formData)
-    // let res = await axios.post(`https://iproject-api.herokuapp.com/auth/logout`)
-    console.log(res)
-    res = await axios.get(`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`,
-    {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "X-Access-Token" : res.data.token
+    if(res.data.message == "Logged in"){
+      role = res.data.role
+      token = res.data.token
+      res = await axios.get(`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "X-Access-Token" : res.data.token
+        }
       }
+      )
+      if(role == 'companies'){
+        address =  "/admin/companydashboard";
+      }
+      if (role == 'students'){
+        address =  "/admin/studentdashboard";
+
+      }
+      else if (role == 'teachers'){
+        address =  "/admin/teacherdashboard";
+
+      }
+      else if (role == 'Admin'){
+        address =  "/admin/dashboard";
+
+      }
+      return {"result": res.data, "address": address, "token": token}
     }
-    )
-    // let res = await axios.get(`https://iproject-api.herokuapp.com/students/`,
-    // {
-    //   headers: {"Access-Control-Allow-Origin": "*"}
-    // }
-    // )
-  return res   }
+    else{
+      alert(res.data.message)
+      return res.data.message
+    }
+  }
   catch(err){
     console.log(err)
   }
@@ -32,23 +51,41 @@ export default class Login extends Component {
     password: '',
     user: '',
     user_id: '',
-    user_role: ''
+    user_role: '',
+    redirectToReferrer: ''
   }
-
   handleChangeEmail = event => {
     this.email = event.target.value
   }
   handleChangePassword = event => {
     this.password = event.target.value
   }
+
   handleSubmit = event => {
     event.preventDefault();
 
     const formData = new FormData()
-    formData.append('email', this.email);
-    formData.append('password', this.password);
+    if(this.email && this.password){
+      formData.append('email', this.email);
+      formData.append('password', this.password);
+      getUser(formData).then(res => {
+        console.log(res);
+        localStorage.clear()
+        localStorage.setItem('name', res.result.data[0].name)
+        localStorage.setItem('email', res.result.data[0].email)
+        localStorage.setItem('role', res.result.data[0].role)
+        localStorage.setItem('token', res.token)
+        localStorage.setItem('address', res.address)
+        this.props.history.push({
+          pathname: res.address,
+          state: { detail: res }
+        })
+      }).catch(err => console.log(err))
+    }
+    else{
+      alert("Fill the form please!")
+    }
 
-  getUser(formData).then(res => {console.log(res.data)}).catch(err => console.log(err))
 
   }
   render() {
@@ -162,5 +199,6 @@ export default class Login extends Component {
           </div>
         </div>
     );
+    
   }
 }

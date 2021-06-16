@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-export default function CardRepaymentHistory() {
+export default function CardReviewHistory() {
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
@@ -13,16 +13,17 @@ export default function CardRepaymentHistory() {
                 Date
               </h3>
             </div>
-            <div className="relative w-1/2 px-4 max-w-full flex-5">
+            <div className="relative w-1/2 px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Company
+                Teacher Review
               </h3>
             </div>
-            <div className="relative w-1/2 px-4 max-w-full flex-5">
+            <div className="relative w-1/2 px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Amount
+                Company Review
               </h3>
             </div>
+            
           </div>
         </div>
         <div className="block w-full overflow-x-auto">
@@ -34,14 +35,14 @@ export default function CardRepaymentHistory() {
                 <th className="border-t-0 px-6 text-dark-green align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                   08, MAR
                 </th>
-                <td className="border-t-0 w-30p px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap">
-                  <div className="text-center">
-                    Knovuslab
+                <td  colSpan='2' className="border-t-0 w-30p px-4 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Teacher said "this"
                   </div>
                 </td>
-                <td className="border-t-0 w-30p px-6 align-left border-l-0 border-r-0 text-xs whitespace-nowrap">
-                  <div className="text-center uppercase">
-                  ETB 2100
+                <td  colSpan='2'  className="border-t-0 w-30p px-8 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Company said "this"
                   </div>
                 </td>
               </tr>
@@ -49,14 +50,14 @@ export default function CardRepaymentHistory() {
                 <th className="border-t-0 px-6 text-dark-green align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                   08, MAR
                 </th>
-                <td className="border-t-0 w-30p px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap">
-                  <div className="text-center">
-                    Knovuslab
+                <td  className="border-t-0 w-30p px-4 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Teacher said "this"
                   </div>
                 </td>
-                <td className="border-t-0 w-30p px-6 align-left border-l-0 border-r-0 text-xs whitespace-nowrap">
-                  <div className="text-center uppercase">
-                  ETB 2100
+                <td  colSpan='2'  className="border-t-0 w-30p px-8 align-center border-l-0 border-r-0 text-xs whitespace-nowrap">
+                  <div className="text-left ml-10">
+                    Company said "this"
                   </div>
                 </td>
               </tr>

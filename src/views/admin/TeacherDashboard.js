@@ -69,11 +69,6 @@ export default class TeacherDashboard extends Component {
                       </div>
         
                     </div>
-                <div className="flex flex-wrap mt-4">
-                  <div className="w-full xl:w-100 mb-12 xl:mb-0 px-4">
-                    <CardRepaymentHistory />
-                  </div>
-                </div>
               </div>
             </>
           );

@@ -1,13 +1,46 @@
 /*eslint-disable*/
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, Redirect } from "react-router-dom";
+import axios from 'axios'
+import { useHistory } from "react-router-dom";
 import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
 import UserDropdown from "components/Dropdowns/UserDropdown.js";
 import Menu from "components/Headers/Menu.js";
 
-export default function Sidebar() {
+async function callLogout(){
+  try{
+    let res = await axios.post(`https://iproject-api.herokuapp.com/auth/logout`, 
+    {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "X-Access-Token" : localStorage.getItem('token')
+      }
+    }
+    )
+    return res
+  }
+  catch(err){
+    console.log(err)
+  }
+
+}
+export default function Sidebar({
+  name,
+  email
+}) {
+  
   const [collapseShow, setCollapseShow] = React.useState("hidden");
+  let address = localStorage.getItem('address');
+
+  const history = useHistory();
+  let logout = () => {
+    callLogout().then(res => {
+      console.log(res)
+      localStorage.clear();
+    }
+    );
+    history.push("/auth/login");
+  }
   return (
     <>
       <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-lightBlue-900  flex flex-wrap items-center justify-between relative md:w-96 z-10 pt-4 pb-0 px-6">
@@ -24,7 +57,7 @@ export default function Sidebar() {
 
           <Link
             className="bigsc md:block text-4xl lg:self-center md:self-center md:pb-2 text-white mr-0 inline-block mt-2 px-0"
-            to="/admin"
+            to={address}
           >
            <img src={require('assets/img/logo.png').default}/>
           </Link>
@@ -69,8 +102,11 @@ export default function Sidebar() {
             </div>
             <div className="text-center mt-1 mb-4">
               <h3 className="text-2xl font-bold leading-normal mb-2 text-white mb-2">
-                Jenna Stones
+                {name}
                   </h3>
+                  <h6 className="text-xs text-white mb-2">
+                ({email})
+                  </h6>
 
             </div>
             <div className="container  mx-auto">
@@ -80,8 +116,8 @@ export default function Sidebar() {
             <div className="flex flex-wrap mt-4">
               <div className="w-full px-4">
                 <span className="cursor-pointer text-sm block my-4 p-4 text-white text-center ">
-                <i class="fas fa-sign-out-alt mr-3"></i><div className="inline-block">
-                  <Link to="/auth/login">Logout</Link></div></span>
+                <i class="fas fa-sign-out-alt mr-3"></i><div className="inline-block" onClick={logout}>
+                  Logout</div></span>
               </div>
             </div>
           </div>

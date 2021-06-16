@@ -2,7 +2,9 @@ import React from "react";
 
 // components
 
-export default function CardProfile() {
+export default function CardProfile(name='', email='') {
+  name = localStorage.getItem('name');
+  email = localStorage.getItem('email')
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -42,15 +44,11 @@ export default function CardProfile() {
           </div>
           <div className="text-center mt-12">
             <h3 className="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-              Jenna Stones
+              {name}
             </h3>
             <div className="text-sm  mt-0 mb-2 text-blueGray-400 font-bold uppercase">
               <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>{" "}
-              Los Angeles, California
-            </div>
-            <div className="mb-2 text-blueGray-600 mt-10">
-              <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-              Solution Manager - Creative Tim Officer
+              AAiT
             </div>
             <div className="mb-2 text-blueGray-600">
               <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
@@ -61,11 +59,7 @@ export default function CardProfile() {
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-9/12 px-4">
                 <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                  An artist of considerable range, Jenna the name taken by
-                  Melbourne-raised, Brooklyn-based Nick Murphy writes, performs
-                  and records all of his own music, giving it a warm, intimate
-                  feel with a solid groove structure. An artist of considerable
-                  range.
+                  A Developer
                 </p>
                 <a
                   href="#pablo"
