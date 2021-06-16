@@ -4,13 +4,15 @@ import axios from 'axios'
 
 async function getUser(formData){
   try{
-    let res = await axios.post(`http://127.0.0.1:5000/auth/login`, formData)
+    let res = await axios.post(`https://iproject-api.herokuapp.com/auth/login`, formData)
     // let res = await axios.post(`https://iproject-api.herokuapp.com/auth/logout`)
     console.log(res)
-    res = await axios.get(`http://127.0.0.1:5000/students/2`,
-    // (`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`,
+    res = await axios.get(`https://iproject-api.herokuapp.com/${res.data.role}/${res.data.user_id}`,
     {
-      headers: {"Access-Control-Allow-Origin": "*"}
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "X-Access-Token" : res.data.token
+      }
     }
     )
     // let res = await axios.get(`https://iproject-api.herokuapp.com/students/`,
@@ -18,8 +20,6 @@ async function getUser(formData){
     //   headers: {"Access-Control-Allow-Origin": "*"}
     // }
     // )
-
-  console.log(res)
   return res   }
   catch(err){
     console.log(err)
@@ -48,7 +48,7 @@ export default class Login extends Component {
     formData.append('email', this.email);
     formData.append('password', this.password);
 
-  getUser(formData).then(res => {console.log(res)}).catch(err => console.log(err))
+  getUser(formData).then(res => {console.log(res.data)}).catch(err => console.log(err))
 
   }
   render() {
