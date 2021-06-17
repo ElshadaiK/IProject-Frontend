@@ -14,7 +14,15 @@ async function getUser(formData){
       {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "X-Access-Token" : res.data.token
+          "X-Access-Token" : token
+        }
+      }
+      )
+      let projects  = await axios.get(`https://iproject-api.herokuapp.com/projects/`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "X-Access-Token" : token
         }
       }
       )
@@ -33,7 +41,7 @@ async function getUser(formData){
         address =  "/admin/dashboard";
 
       }
-      return {"result": res.data, "address": address, "token": token}
+      return {"result": res.data, "address": address, "token": token, "projects": projects.data}
     }
     else{
       alert(res.data.message)
@@ -73,7 +81,11 @@ export default class Login extends Component {
         localStorage.clear()
         localStorage.setItem('name', res.result.data[0].name)
         localStorage.setItem('email', res.result.data[0].email)
+        localStorage.setItem('batch', res.result.data[0].batch)
+        localStorage.setItem('id', res.result.data[0].student_id)
         localStorage.setItem('role', res.result.data[0].role)
+        localStorage.setItem('detail', JSON.stringify(res.result.data[0]))
+        localStorage.setItem('allProjects', JSON.stringify(res.projects.data))
         localStorage.setItem('token', res.token)
         localStorage.setItem('address', res.address)
         this.props.history.push({

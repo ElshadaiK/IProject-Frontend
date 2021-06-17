@@ -8,7 +8,6 @@ import CardReviewHistory from "components/Cards/CardReviewHistory.js";
 import CardStudentLoan from "components/Cards/CardStudentLoan.js";
 import HeaderStats from "components/Headers/HeaderStats.js";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
-import { useLocation } from "react-router-dom";
 
 async function getProject(id){
   try{
@@ -59,22 +58,34 @@ export default class StudentDashboard extends Component {
       pays: [],
       ratings: []
     }
+    count = 0
+    proje = []
 
   
     render() {
 
-      const data = this.props.location.state.detail.result.data[0]
-      this.student_batch = data.batch
-      this.student_email = data.email
-      this.student_name = data.name 
-      this.student_id = data.student_id
-      this.institution_id = data.institution_id
-      this.student_verified = data.verified
-      this.projects = data.works
-
+      localStorage.setItem('projects', '[]')
+      const data = JSON.parse(localStorage.getItem('detail'))
       console.log(data)
-      for (let index = 0; index < this.projects.length; index++) {
-          const element = this.projects[index];
+      this.count = data.works.length
+      this.state.student_batch = data.batch
+      this.state.student_email = data.email
+      this.state.student_name = data.name 
+      this.state.student_id = data.student_id
+      this.state.institution_id = data.institution_id
+      this.state.student_verified = data.verified
+      this.state.projects = data.works
+
+      this.proje = data.works
+      console.log(this.proje)
+      let menuItems = [];
+    for (var i = 0; i < this.proje.length; i++) {
+        menuItems.push(<CardStudentLoan project_id={this.proje[i].id} start_date={this.proje[i].start_date} />);
+    }
+
+      
+      for (let index = 0; index < this.state.projects.length; index++) {
+          const element = this.state.projects[index];
           if(element.pays.date){
             console.log(element.pays)
             this.state.pays.push(element.pays)
@@ -83,21 +94,19 @@ export default class StudentDashboard extends Component {
           if(element.ratings.length > 0){
             this.state.ratings.push(element.ratings)
           }
-          if(!element.finished){
-            getProject(element.id).then(res => this.ongoing.push(res)).catch(err => console.log(err))
+          if(element.finished){
+            getProject(element.id).then(res => {
+              let proj = JSON.parse(localStorage.getItem('projects'))
+              proj.push(res.data.data[0])
+              
+              console.log(res)
+              localStorage.setItem('projects', JSON.stringify(proj))
+              this.state.ongoing = localStorage.getItem('projects')
+            }).catch(err => console.log(err))
           }
           
-          
         }
-      // for (let index = 0; index < this.projects.length; index++) {
-      //   const element = this.projects[index];
-      //   if(!element.finished){
-      //     getProject(element.id).then(res => this.ongoing.push(res)).catch(err => console.log(err))
-      //   }
-        
-        
-      // }
-      // console.log(this.ongoing)
+      // this.state.ongoing = Object.values(this.state.ongoing)
 
 
       return (
@@ -119,17 +128,14 @@ export default class StudentDashboard extends Component {
                           className="bg-blue-50 text-black text-xs font-bold uppercase px-4 py-2 rounded-b shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                         >
         
-                          {this.state.ongoing.length}
+                          {this.count}
                         </h1>
                       </div>
         
                     </div>
                 <div className="flex flex-wrap mt-4">
                   <div className="w-full xl:w-6/12 mb-12 xl:mb-0 px-4">
-                    <CardStudentLoan />
-                  </div>
-                  <div className="w-full xl:w-6/12 px-4">
-                    <CardStudentLoan />
+                    {menuItems}
                   </div>
                 </div>
               </div>

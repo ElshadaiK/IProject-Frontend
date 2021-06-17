@@ -21,25 +21,7 @@ export default function CardProfile(name='', email='') {
             </div>
             <div className="w-full px-4 text-center mt-20">
               <div className="flex justify-center py-4 lg:pt-4 pt-8">
-                <div className="mr-4 p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                    22
-                  </span>
-                  <span className="text-sm text-blueGray-400">Friends</span>
-                </div>
-                <div className="mr-4 p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                    10
-                  </span>
-                  <span className="text-sm text-blueGray-400">Photos</span>
-                </div>
-                <div className="lg:mr-4 p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                    89
-                  </span>
-                  <span className="text-sm text-blueGray-400">Comments</span>
-                </div>
-              </div>
+           </div>
             </div>
           </div>
           <div className="text-center mt-12">
@@ -61,13 +43,7 @@ export default function CardProfile(name='', email='') {
                 <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
                   A Developer
                 </p>
-                <a
-                  href="#pablo"
-                  className="font-normal text-lightBlue-500"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Show more
-                </a>
+                
               </div>
             </div>
           </div>

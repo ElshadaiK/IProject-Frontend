@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
     
-class CardStudentLoan extends Component {
-  
-  render() {
-    return (
+export default function CardStudentLoan({
+  start_date
+
+}) {
+  return (
+
       <>
-      <h3>{this.state}</h3>
         <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg">
           <div className="rounded-t mb-0 px-4 py-3 border-0">
             <div className="flex flex-wrap items-center border-b">
               <div className="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3 className="font-semibold text-base text-blueGray-700">
-                Company Name
+                Comp
                 </h3>
               </div>
               <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
@@ -46,7 +47,7 @@ class CardStudentLoan extends Component {
                   </th>
                   <td className="border-t-0 px-6 align-right border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     <div className="text-right text-xs">
-                    Due date 5th June, 2020
+                    {start_date}
                     </div>
                   </td>
                 </tr>
@@ -73,6 +74,3 @@ class CardStudentLoan extends Component {
       </>
     );
   }
-}
-
-export default CardStudentLoan
