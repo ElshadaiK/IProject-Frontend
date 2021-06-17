@@ -27,6 +27,25 @@ async function getProject(id){
   }
 
 }
+async function finishProject(id){
+  try{
+    let token = localStorage.getItem('token')
+    let res = await axios.put(`https://iproject-api.herokuapp.com/work/end/${id}`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "X-Access-Token" : token
+        }
+      }
+      )
+      return res.data.data
+    
+  }
+  catch(err){
+    console.log(err)
+  }
+
+}
 export default class StudentDashboard extends Component {
     state = {
       student_id: '',
